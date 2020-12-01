@@ -4,9 +4,8 @@ import sys
 import configparser
 from modules.log_init import log_settings
 from modules.helpers import read_file
-from day1.helpers import multiply_nrs
-from day1.helpers import get_combinations
-from day1.helpers import sum_combinations
+from day1.helpers import part_one
+from day1.helpers import part_two
 
 
 # global variables
@@ -25,11 +24,9 @@ logger = log_settings(script_base_dir, log_name=log_name)
 
 
 def main():
-    pass
+    part_one(script_base_dir, day)
+    part_two(script_base_dir, day)
 
 
 if __name__ == '__main__':
-    # main()
-    combinations = get_combinations(read_file(f"{day}/numbers", logger, as_int=True), 3)
-    sum_comb = sum_combinations(combinations, 2020)
-    print(multiply_nrs(sum_comb))
+    main()

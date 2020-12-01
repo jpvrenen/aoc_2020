@@ -36,13 +36,25 @@ def sum_combinations(data, number):
     return result
 
 
-def part_one():
-    comb = get_combinations(read_file(f"numbers", as_int=True), 2)
+def part_one(path, day):
+    """
+    yield solution for day 1 part 1
+    :param path: file location
+    :param day: day
+    :return: print solution
+    """
+    comb = get_combinations(read_file(f"{path}\\{day}\\numbers", as_int=True), 2)
     sum_comb = sum_combinations(comb, 2020)
-    print(multiply_nrs(sum_comb))
+    print(f"Solution {day} part 1: {multiply_nrs(sum_comb)}")
 
 
-def part_two():
-    comb = get_combinations(read_file(f"numbers", as_int=True), 3)
+def part_two(path, day):
+    """
+    yield solution for day 1 part 1
+    :param path: file location
+    :param day: day
+    :return: print solution
+    """
+    comb = get_combinations(read_file(f"{path}\\{day}\\numbers", as_int=True), 3)
     sum_comb = sum_combinations(comb, 2020)
-    print(multiply_nrs(sum_comb))
+    print(f"Solution {day} part 2: {multiply_nrs(sum_comb)}")
