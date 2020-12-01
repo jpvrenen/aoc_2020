@@ -3,6 +3,8 @@ import os
 import sys
 import configparser
 from modules.log_init import log_settings
+from modules.helpers import read_file
+from day1.helpers import subtract_and_find
 
 
 # global variables
@@ -25,4 +27,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    # main()
+    numbers = subtract_and_find(2020, read_file(f"{day}/numbers", logger, as_int=True))
