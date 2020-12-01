@@ -1,18 +1,5 @@
 from functools import reduce
-
-
-def subtract_and_find(number, data):
-    """
-    We find 'number' as a sum for given datapoints
-    :param number: number we need to find
-    :param data: list of numbers any 2 members sum to 'number'
-    :return: numbers that sum 'number'
-    """
-    for first_nr in data:
-        second_nr = int(number) - int(first_nr)
-        if second_nr in data:
-            return [first_nr, second_nr]
-    return []
+from itertools import combinations
 
 
 def multiply_nrs(data):
@@ -22,3 +9,27 @@ def multiply_nrs(data):
     :return: numbers from list multiplied
     """
     return reduce((lambda x, y: int(x) * int(y)), data)
+
+
+def get_combinations(data, r):
+    """
+    returns list with combinations from data
+    :param data: list to combine
+    :param r: create nr combinations from input list
+    :return: list with combinations
+    """
+    return list(combinations(data, r))
+
+
+def sum_combinations(data, number):
+    """
+    returns numbers from combination list that sum given number
+    :param data: list of combinations numbers
+    :param number: number should be equal the sum of combinations in list
+    :return: list of combinations that meet the criteria
+    """
+    result = list()
+    for n in range(len(data)):
+        if number == sum(data[n]):
+            result.extend(list(data[n]))
+    return result

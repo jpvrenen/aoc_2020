@@ -4,8 +4,9 @@ import sys
 import configparser
 from modules.log_init import log_settings
 from modules.helpers import read_file
-from day1.helpers import subtract_and_find
 from day1.helpers import multiply_nrs
+from day1.helpers import get_combinations
+from day1.helpers import sum_combinations
 
 
 # global variables
@@ -29,4 +30,6 @@ def main():
 
 if __name__ == '__main__':
     # main()
-    print(multiply_nrs(subtract_and_find(2020, read_file(f"{day}/numbers", logger, as_int=True))))
+    combinations = get_combinations(read_file(f"{day}/numbers", logger, as_int=True), 3)
+    sum_comb = sum_combinations(combinations, 2020)
+    print(multiply_nrs(sum_comb))
