@@ -5,6 +5,7 @@ import configparser
 from modules.log_init import log_settings
 from modules.helpers import read_file
 from day1.helpers import subtract_and_find
+from day1.helpers import multiply_nrs
 
 
 # global variables
@@ -28,4 +29,4 @@ def main():
 
 if __name__ == '__main__':
     # main()
-    numbers = subtract_and_find(2020, read_file(f"{day}/numbers", logger, as_int=True))
+    print(multiply_nrs(subtract_and_find(2020, read_file(f"{day}/numbers", logger, as_int=True))))

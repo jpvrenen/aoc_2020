@@ -1,3 +1,6 @@
+from functools import reduce
+
+
 def subtract_and_find(number, data):
     """
     We find 'number' as a sum for given datapoints
@@ -10,3 +13,12 @@ def subtract_and_find(number, data):
         if second_nr in data:
             return [first_nr, second_nr]
     return []
+
+
+def multiply_nrs(data):
+    """
+    Multiply numbers from list
+    :param data: list with numbers
+    :return: numbers from list multiplied
+    """
+    return reduce((lambda x, y: int(x) * int(y)), data)
