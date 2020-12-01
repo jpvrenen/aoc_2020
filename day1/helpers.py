@@ -6,7 +6,7 @@ def subtract_and_find(number, data):
     :return: numbers that sum 'number'
     """
     for first_nr in data:
-        second_nr = int(number) - int(entry)
+        second_nr = int(number) - int(first_nr)
         if second_nr in data:
             return [first_nr, second_nr]
     return []
