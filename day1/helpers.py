@@ -1,5 +1,6 @@
 from functools import reduce
 from itertools import combinations
+from modules.helpers import read_file
 
 
 def multiply_nrs(data):
@@ -33,3 +34,15 @@ def sum_combinations(data, number):
         if number == sum(data[n]):
             result.extend(list(data[n]))
     return result
+
+
+def part_one():
+    comb = get_combinations(read_file(f"numbers", as_int=True), 2)
+    sum_comb = sum_combinations(comb, 2020)
+    print(multiply_nrs(sum_comb))
+
+
+def part_two():
+    comb = get_combinations(read_file(f"numbers", as_int=True), 3)
+    sum_comb = sum_combinations(comb, 2020)
+    print(multiply_nrs(sum_comb))

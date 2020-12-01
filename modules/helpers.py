@@ -1,8 +1,11 @@
-def read_file(d, log, **kwargs):
+import logging
+logger = logging.getLogger(__name__)
+
+
+def read_file(d, **kwargs):
     """
     function returns list where elements are lines strips blank lines and spaces
     :param d: file to read
-    :param log: logger
     :return: list where elements are lines strips blank lines and spaces
     """
     result = list()
@@ -16,5 +19,5 @@ def read_file(d, log, **kwargs):
             return result
     except FileNotFoundError as e:
         response = f"read_file: {e}"
-        log.warning(response)
+        logger.warning(response)
         return result
