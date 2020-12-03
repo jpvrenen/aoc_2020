@@ -50,9 +50,9 @@ def count_trees(traj_data, right, down):
     """
     trees = int()
     offset = 0
-    traj_data = traj_data[::down]
-    for entry in traj_data[1::]:
-        offset = calc_offset(offset, right, len(entry))
+    traj_data = traj_data[::down]  # we select all trajectories we are interested in
+    for entry in traj_data[1::]:  # we omit the first trajectory
+        offset = calc_offset(offset, right, len(entry))  # offset in given trajectory
         if entry[offset] == '#':
             trees += 1
     return trees
