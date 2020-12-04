@@ -23,3 +23,20 @@ def read_file(d, **kwargs):
         response = f"read_file: {e}"
         logger.warning(response)
         return result
+
+
+def read_passwords_file(d, **kwargs):
+    """
+    function returns list where each element is a password string
+    :param d: file to read
+    :return: list where each element is a password as string
+    """
+    result = list()
+    try:
+        with open(d, 'r') as f:
+            result = (f.read()).split('\n\n')
+            return result
+    except FileNotFoundError as e:
+        response = f"read_file: {e}"
+        logger.warning(response)
+        return result
