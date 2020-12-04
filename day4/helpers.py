@@ -212,30 +212,31 @@ def valid_pid(pid):
 
 def passport_val_checks(passport):
     """
-    perform all validation checks needed to validate passport. 'cid' is valid since there is no check for cid.
+    perform all validation checks needed to validate passport. 'cid' is valid by default since there is no check
+    for cid.
     :param passport: perform validation checks
     :return: True if all checks pass, False if any check fails
     """
     if not valid_byr(passport['byr']):
-        # print(f"valid_byr(passport['byr']): {valid_byr(passport['byr'])}")
+        # print(f"Birth Year: {valid_byr(passport['byr'])}")
         return False
     if not valid_iyr(passport['iyr']):
-        # print(f"valid_iyr(passport['iyr']): {valid_iyr(passport['iyr'])}")
+        # print(f"Issue Year: {valid_iyr(passport['iyr'])}")
         return False
     if not valid_eyr(passport['eyr']):
-        # print(f"valid_eyr(passport['eyr']): {valid_eyr(passport['eyr'])}")
+        # print(f"Expiration Year: {valid_eyr(passport['eyr'])}")
         return False
     if not valid_hgt(passport['hgt']):
-        # print(f"valid_hgt(passport['hgt']): {valid_hgt(passport['hgt'])}")
+        # print(f"Height: {valid_hgt(passport['hgt'])}")
         return False
     if not valid_hcl(passport['hcl']):
-        # print(f"valid_hcl(passport['hcl']): {valid_hcl(passport['hcl'])}")
+        # print(f"Hair Color): {valid_hcl(passport['hcl'])}")
         return False
     if not valid_ecl(passport['ecl']):
-        # print(f"valid_ecl(passport['ecl']): {valid_ecl(passport['ecl'])}")
+        # print(f"Eye Color: {valid_ecl(passport['ecl'])}")
         return False
     if not valid_pid(passport['pid']):
-        # print(f"valid_pid(passport['pid']): {valid_pid(passport['pid'])}")
+        # print(f"Passport ID: {valid_pid(passport['pid'])}")
         return False
     return True
 
