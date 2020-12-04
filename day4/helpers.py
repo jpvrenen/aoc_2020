@@ -193,8 +193,7 @@ def valid_ecl(ecl):
     eye_colors = ['amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth']
     if ecl in eye_colors:
         return True
-    else:
-        return False
+    return False
 
 
 def valid_pid(pid):
