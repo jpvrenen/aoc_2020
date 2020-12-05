@@ -28,9 +28,7 @@ def bin_flip(data):
     :param data: list of binaries ['1111111111', '0000000000', etc]
     :return: list of flipped binaries [(0b0000000, 0b000), (0b1111111, 0b111), etc]
     """
-    result = list()
-    for entry in data:
-        result.append((bin(int(entry[:7], 2) ^ 0b1111111), bin(int(entry[7:10], 2) ^ 0b111)))
+    result = [(bin(int(x[:7], 2) ^ 0b1111111), bin(int(x[7:10], 2) ^ 0b111)) for x in data]
     return result
 
 
@@ -40,9 +38,7 @@ def get_row_column(binaries):
     :param binaries: [(0b0000000, 0b000), (0b1111111, 0b111), etc]
     :return: [(0, 0), (127, 8), etc]
     """
-    result = list()
-    for entry in binaries:
-        result.append((int(entry[0], 2), int(entry[1], 2)))
+    result = [(int(x[0], 2), int(x[1], 2)) for x in binaries]
     return result
 
 
