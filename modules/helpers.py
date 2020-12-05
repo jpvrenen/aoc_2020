@@ -14,7 +14,7 @@ def read_file(d, **kwargs):
     try:
         with open(d, 'r') as f:
             if as_lines:
-                return [x.rstrip('\n') for x in f.readlines()]
+                return [x.rstrip('\n') for x in f.readlines()]  # or (f.read()).split('\n')
             result = list(f.read().split())
             if as_int:
                 return [int(x) for x in result]
