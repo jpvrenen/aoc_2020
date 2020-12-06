@@ -51,6 +51,6 @@ def part_two(path, day):
         for key in answer_occurence:
             if answer_occurence[key] == nr_persons:  # if the occurence of anser matches the number of people in group
                 group_result.append(key)
-        if group_result:  # if the group has given same answer
+        if group_result:  # if the group has given same answers
             count_same_answer.append(len(group_result))
     print(f"Solution {day} part 2: Sum of count same answer = {sum(count_same_answer)}")
