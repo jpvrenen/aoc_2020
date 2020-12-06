@@ -11,10 +11,13 @@ def read_file(d, **kwargs):
     result = list()
     as_int = kwargs.get('as_int', False)
     as_lines = kwargs.get('as_lines', False)
+    empty_lines = kwargs.get('empty_lines', False)
     try:
         with open(d, 'r') as f:
             if as_lines:
                 return [x.rstrip('\n') for x in f.readlines()]  # or (f.read()).split('\n')
+            if empty_lines:
+                return (f.read()).split('\n\n')
             result = list(f.read().split())
             if as_int:
                 return [int(x) for x in result]
