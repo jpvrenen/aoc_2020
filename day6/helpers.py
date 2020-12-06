@@ -31,7 +31,7 @@ def part_one(path, day):
     declarations_file = read_file(f"{path}\\{day}\\declarationforms", empty_lines=True)
     # smash all individual answers into unique (set) given answer and count the char occurence
     count_occurrences = [len(set([y for y in x.replace('\n', '')])) for x in declarations_file]
-    # simply sum all list items and print
+    # sum all list items and print
     print(f"Solution {day} part 1: Sum of counts = {sum(count_occurrences)}")
 
 
