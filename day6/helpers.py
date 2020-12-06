@@ -44,7 +44,7 @@ def part_two(path, day):
     all_answers = [(list([y for y in x.replace('\n', '')]), len(x.split('\n'))) for x in declarations_file]
     # count the same answers
     count_same_answer = list()
-    for groupanswers in all_answers:  # groupanswers ([<all answers>], <size of group>)
+    for groupanswers in all_answers:  # groupanswers ([<all groupanswers>], <size of group>)
         answer_occurence = Counter(groupanswers[0])  # for all groupanswers count the occurence of each element
         nr_persons = groupanswers[1]  # number of people in group
         group_result = list()  # collect same answer given by group
