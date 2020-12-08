@@ -3,13 +3,13 @@ import os
 import sys
 import configparser
 from modules.log_init import log_settings
-from day6.helpers import part_one
-from day6.helpers import part_two
+from day7.helpers import part_one
+from day7.helpers import part_two
 
 
 # global variables
 general = 'general'
-day = 'day6'  # we may need this
+day = 'day7'  # we may need this
 script_base_dir = os.path.abspath(os.path.dirname(sys.argv[0]))
 parameters = config.variables
 cfg = configparser.ConfigParser()
