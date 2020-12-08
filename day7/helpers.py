@@ -88,19 +88,25 @@ def find_more_bags(guide, bags):
 
 
 def count_bags(guide, bags):
+    """
+    recursion find all bags in bags until no more bag in bag, then recurse back and add all bags found
+    :param guide: dictionary containing what color holds what bag and how much
+    :param bags: dictionary with bags for which we need to find how many bags are in these bags
+    :return: returns current bag count until all bags are counted
+    """
     # print(f"=====")
     # print(f"find bags in: {bags.keys()}")
     bag_count = int()
     for color in bags:
         # print(f"{color}: has bags, {guide[color]}")
-        if guide[color]:
+        if guide[color]:  # if bag still contain bag(s)
             # print(f"bag_count += {bags[color]} + {bags[color]} * {guide[color]}")
             has_bags = count_bags(guide, guide[color])
             bag_count += bags[color] + (bags[color] * has_bags)
             # print(f"{guide[color]} has {has_bags} bags.")
             # print(f"bag_count += {bags[color]} + {bags[color]} * {has_bags}")
             # print(f"if: bag_count is now: {bag_count}")
-        else:
+        else:  # no more bags are found, we recurse back
             bag_count += bags[color]
             # print(f"end of line, bag_count = {bags[color]}")
             # print(f"=====")
