@@ -103,8 +103,6 @@ def part_two(path, day):
     rest_list = encoding_f[25:]
     # invalid_number = 88311122
     invalid_number = part_one(path, day)
-    # preamble_comb = get_multiple_combinations(preamble_list)
-    # preamble_sum = check_preamble_sum2(preamble_comb, invalid_number)
     found = False
     while not found and rest_list:
         preamble_comb = get_combinations(preamble_list)
