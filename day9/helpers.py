@@ -1,6 +1,5 @@
 from modules.helpers import read_file
 from itertools import combinations
-import pandas as pd
 
 # path = 'C:\\DATA\\Projects\\aoc_2020'
 # day = 'day9'
